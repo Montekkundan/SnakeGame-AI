@@ -109,7 +109,11 @@ class SnakeGameAI:
         return False
 
     def _update_ui(self):
+        # self.display.fill(BLACK)
+        myimage = pygame.image.load("bg.png")
+        imagerect = myimage.get_rect()
         self.display.fill(BLACK)
+        self.display.blit(myimage, imagerect)
 
         for pt in self.snake:
             pygame.draw.rect(self.display, BLUE1, pygame.Rect(pt.x, pt.y, BLOCK_SIZE, BLOCK_SIZE))
